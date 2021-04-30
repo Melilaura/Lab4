@@ -1,12 +1,13 @@
+
+
 let num;
-let plus;
+//change screen
 let screen;
 
 function setup (){
 
     createCanvas(500, 500);
     num=0;
-    plus=true;
     screen=1;
 }
 
@@ -16,43 +17,41 @@ function draw(){
     background(208,240,244);
 
     if(screen==1){
-//textBox
-noStroke();
-fill(255);
+    //textBox
+     noStroke();
+     fill(255);
 
-rect(200, 200, 100, 50);
+     rect(200, 200, 100, 50);
 
- //buttons
+    //buttons
  //resta
  rect(150, 210, 30, 30);
 
  //suma
  rect(320, 210, 30, 30);
 
- fill(0, 102, 153);
  textSize(25);
-
+ fill(0, 102, 153);
  text(num, 240, 235);
 
  if(num!=0){
 
     noStroke();
     fill(255);
-
     rect(300, 400, 100, 50);
 
  }
 
     }
 
-    if(screen==1){
+    if(screen==2){
         //textBox
         noStroke();
         fill(255);
         
         rect(200, 200, 100, 50);
         
-            }
+    }
     
 }
 
