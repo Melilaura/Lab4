@@ -1,14 +1,15 @@
-
-
 let num;
-//change screen
 let screen;
+
+let rectsArray;
 
 function setup (){
 
     createCanvas(500, 500);
     num=0;
     screen=1;
+    rectsArray = [num];
+    
 }
 
 
@@ -21,7 +22,7 @@ function draw(){
      noStroke();
      fill(255);
 
-     rect(200, 200, 100, 50);
+    rect(200, 200, 100, 50);
 
     //buttons
  //resta
@@ -34,22 +35,37 @@ function draw(){
  fill(0, 102, 153);
  text(num, 240, 235);
 
+
+
  if(num!=0){
 
     noStroke();
     fill(255);
     rect(300, 400, 100, 50);
-
  }
 
     }
 
     if(screen==2){
-        //textBox
+
         noStroke();
         fill(255);
-        
         rect(200, 200, 100, 50);
+
+        
+
+        for (let index = 0; index < num; index++) {
+
+            console.log(num);
+            fill(255);
+            rect(50, 50, 100, 50);
+            let figure = new RectFigure (posX,posY, tam);
+            rectsArray[index] = figure;            
+        }
+
+        
+
+       
         
     }
     
