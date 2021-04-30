@@ -1,6 +1,8 @@
 let num;
 let screen;
-
+let posX;
+let posY;
+let tam;
 let rectsArray;
 
 function setup (){
@@ -9,6 +11,10 @@ function setup (){
     num=0;
     screen=1;
     rectsArray = [num];
+
+    posX= 10;
+    posY= random(100,250);
+    tam=50;
     
 }
 
@@ -58,16 +64,12 @@ function draw(){
 
             console.log(num);
             fill(255);
-            rect(50, 50, 100, 50);
             let figure = new RectFigure (posX,posY, tam);
-            rectsArray[index] = figure;            
+            rectsArray[index] = figure;   
+            figure.draw();          
         }
 
-        
-
-       
-        
-    }
+      }
     
 }
 
