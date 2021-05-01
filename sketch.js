@@ -5,16 +5,21 @@ let posY;
 let tam;
 let rectsArray;
 
+let numArray;
+
 function setup (){
 
     createCanvas(500, 500);
     num=0;
     screen=1;
-    rectsArray = [num];
+    rectsArray = [];
+
+   
 
     posX= 10;
-    posY= random(100,250);
+    posY= 10;
     tam=50;
+    
     
 }
 
@@ -58,16 +63,22 @@ function draw(){
         fill(255);
         rect(200, 200, 100, 50);
 
+        rectsArray=[num];
+
+        for (let i = 0; i < num; i++) {
+
+            console.log(rectsArray);
+            let figure = new RectFigure ( random(10,400),random(10,250), tam);
+            rectsArray[i] = figure;   
+            //figure.draw();
+            figure.draw();   
+        }
+
         
 
-        for (let index = 0; index < num; index++) {
+       
 
-            console.log(num);
-            fill(255);
-            let figure = new RectFigure (posX,posY, tam);
-            rectsArray[index] = figure;   
-            figure.draw();          
-        }
+       
 
       }
     
@@ -98,6 +109,7 @@ function mousePressed() {
             if(mouseX>300 && mouseX<400 && mouseY>400 && mouseY<450 ){
 
                screen=2;
+               
                    
                 }
 

@@ -8,7 +8,7 @@ class RectFigure {
 
   draw (){
 
-    rect(50,50,50);
+    rect(posX,posY,tam);
 
   }
 
