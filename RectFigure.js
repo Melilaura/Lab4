@@ -34,6 +34,27 @@ changeSize (){
   this.tam++;
 }
 
+getPosX(){
+  return this.posX;
+}
+
+
+getPosY(){
+  return this.posY;
+}
+
+getTam(){
+  return this.tam;
+}
+
+getDir(){
+  return this.dir;
+}
+
+getValue(){
+  return this.value;
+}
+
 
 }
 

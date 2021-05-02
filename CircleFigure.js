@@ -11,7 +11,7 @@ class CircleFigure {
 
   draw (){
 
-    circle(posX,posY,tam, dir);
+    circle(this.posX,this.posY,this.tam, this.tam);
 
   }
 

@@ -6,6 +6,8 @@ let tam;
 let dir;
 let value;
 let rectsArray;
+let paintCircles;
+
 
 
 
@@ -13,7 +15,9 @@ function setup (){
 
     createCanvas(500, 500);
     num=0;
-    screen=1;  
+    screen=1; 
+    
+    paintCircles=false;
 }
 
 
@@ -182,15 +186,29 @@ if(screen==2){
     //crear circulos
     if(mouseX>340 && mouseX<440 && mouseY>420 && mouseY<470 ){
 
-        console.log("crear circulos");
-      
+        for (let index = 0; index < rectsArray.length; index++) 
+        {
+            
+            let circle = new CircleFigure (rectsArray[index].getPosX(), rectsArray[index].getPosY()+100,
+            rectsArray[index].getTam(), rectsArray[index].getDir(), rectsArray[index].getValue());
+
+        
+            console.log("crear circulos");
+            rectsArray.map(function (element) 
+            {
+                
+                return new CircleFigure;
+            })
+          
+        }
+       paintCircles=true;
         }
 
 }
 function sizeChange() {
     for (let index = 0; index < rectsArray.length; index++) {
         rectsArray[index].changeSize();
-         
+        
      }  
     
 }
