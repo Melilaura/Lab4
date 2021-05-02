@@ -7,14 +7,13 @@ let dir;
 let value;
 let rectsArray;
 
+
+
 function setup (){
 
     createCanvas(500, 500);
     num=0;
-    screen=1;
-   
-
-   
+    screen=1;  
 }
 
 
@@ -54,9 +53,18 @@ function draw(){
 
         noStroke();
         fill(255);
-        rect(200, 200, 100, 50);
 
-       // console.log(num)
+        //sumar al arreglo
+        rect(10, 420, 100, 50);
+
+        //restar al arreglo
+        rect(120, 420, 100, 50);
+
+        //duplicar tamaño
+        rect(230, 420, 100, 50);
+
+        //agregar circulos
+        rect(340, 420, 100, 50);
        
        for (let index = 0; index < rectsArray.length; index++) {
           rectsArray[index].draw();
@@ -89,9 +97,10 @@ function init (){
  }
 function mousePressed() {
 
+    //PANTALLA PRINCIPAL------------------------------------------
     if(screen==1){
         //restar
-        
+
         if(mouseX>150 && mouseX<180 && mouseY>210 && mouseY<240 ){
 
             num--;
@@ -100,7 +109,7 @@ function mousePressed() {
                 }
               
             }
-        //sumar boton
+        //sumar 
         if(mouseX>320 && mouseX<350 && mouseY>210 && mouseY<240 ){
 
             num++;
@@ -110,16 +119,69 @@ function mousePressed() {
                
             }
 
-            // cambio de pantalla boton 
-            if(mouseX>300 && mouseX<400 && mouseY>400 && mouseY<450 ){
-
-               screen=2;
-               rectsArray = [num];
-               init(); 
+        // cambio de pantalla a la segunda
+        if(mouseX>300 && mouseX<400 && mouseY>400 && mouseY<450 ){
+     
+            screen=2;
+            rectsArray = [num];
+            init(); 
                
                    
-                }
+            }
 
     }
+//FIN PANTALLA PRINCIPAL------------------------------------------
 
+// SEGUNDA PANTALLLA ------------------------------------------
+if(screen==2){
+    //sumar
+
+    if(mouseX>10 && mouseX<110 && mouseY>420 && mouseY<470 ){
+
+        num=+1;
+        for (let index = 0; index < num; index++) {
+            
+            posY= random(0,250);
+            posX= random(0,500);
+            value= random(1,10);
+            let figure = new RectFigure ( posX, posY, tam, dir, value);                      
+            let nuevaLongitud = rectsArray.push(figure); 
+       
+        }
+
+        
+        console.log("Sumar al arreglo");
+        
+       }
+   
+    //restar 
+    if(mouseX>120 && mouseX<220 && mouseY>420 && mouseY<470 ){
+
+        //num=-1;
+        for (let index = 0; index < num; index++) {
+
+            let ultimo = rectsArray[rectsArray.length - 1]
+           ultimo = rectsArray.pop()
+            
+       
+        }
+        console.log("restar al arreglo");
+           
+        }
+
+    //duplicar tamaño
+    if(mouseX>230 && mouseX<30 && mouseY>420 && mouseY<470 ){
+
+        console.log("duplicar tamaño");
+                  
+        }
+
+    //crear circulos
+    if(mouseX>340 && mouseX<440 && mouseY>420 && mouseY<470 ){
+
+        console.log("crear circulos");
+      
+        }
+
+}
 }
