@@ -12,7 +12,7 @@ class RectFigure {
 
   draw (){
     fill(255);
-    rect(this.posX,this.posY, 50, 50);
+    rect(this.posX,this.posY, this.tam, this.tam);
     fill(0);
     text(Math.floor(this.value), this.posX+(this.tam/2),this.posY+(this.tam/2));
   }
@@ -30,6 +30,11 @@ cicle(){
     this.posX=500;
   }
 }
+changeSize (){
+  this.tam++;
+}
+
+
 }
 
  

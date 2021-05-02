@@ -134,7 +134,7 @@ function mousePressed() {
 
 // SEGUNDA PANTALLLA ------------------------------------------
 if(screen==2){
-    //sumar
+    //sumar cuadros al arreglo
 
     if(mouseX>10 && mouseX<110 && mouseY>420 && mouseY<470 ){
 
@@ -154,25 +154,28 @@ if(screen==2){
         
        }
    
-    //restar 
+    //eliminar
     if(mouseX>120 && mouseX<220 && mouseY>420 && mouseY<470 ){
 
         //num=-1;
-        for (let index = 0; index < num; index++) {
+       // for (let index = 0; index < num; index++) {
 
-            let ultimo = rectsArray[rectsArray.length - 1]
-           ultimo = rectsArray.pop()
+           // let ultimo = rectsArray[rectsArray.length - 1]
+           /*ultimo = */rectsArray.pop()
             
        
-        }
+        //}
         console.log("restar al arreglo");
            
         }
 
     //duplicar tamaño
-    if(mouseX>230 && mouseX<30 && mouseY>420 && mouseY<470 ){
+    if(mouseX>230 && mouseX<330 && mouseY>420 && mouseY<470 ){
 
         console.log("duplicar tamaño");
+
+        rectsArray.forEach ( sizeChange   
+        );
                   
         }
 
@@ -184,4 +187,12 @@ if(screen==2){
         }
 
 }
+function sizeChange() {
+    for (let index = 0; index < rectsArray.length; index++) {
+        rectsArray[index].changeSize();
+         
+     }  
+    
+}
+
 }
