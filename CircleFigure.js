@@ -10,10 +10,32 @@ class CircleFigure {
 
 
   draw (){
-
-    circle(this.posX,this.posY,this.tam, this.tam);
-
+    fill(255);
+    circle (this.posX,this.posY, this.tam);
+    fill(0);
+    text(Math.floor(this.value), this.posX+(this.tam/2),this.posY+(this.tam/2));
   }
+
+ move() {
+   
+  this.posX+=this.dir;
+}
+
+cicle(){
+  if(this.posX>500){
+    this.posX=0;
+  }
+  if(this.posX<0){
+    this.posX=500;
+  }
+}
+changeSize (){
+  this.tam++;
+}
+
+getPosX(){
+  return this.posX;
+}
 
 
 }

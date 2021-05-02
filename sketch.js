@@ -97,7 +97,20 @@ function init (){
 }
 
  function keyPressed (){
-     console.log(rectsArray);
+     
+    if(key=='n' )
+    {
+        rectsArray.sort(function (a,b){
+           
+           
+                console.log(rectsArray);
+                return a.getValue()-b.getValue();
+            
+           
+        
+        }); 
+
+    }
  }
 function mousePressed() {
 
@@ -186,22 +199,16 @@ if(screen==2){
     //crear circulos
     if(mouseX>340 && mouseX<440 && mouseY>420 && mouseY<470 ){
 
-        for (let index = 0; index < rectsArray.length; index++) 
-        {
+        circleArray=rectsArray.map(function(element, index){
+            return (new CircleFigure((index*10)+10,375,40,10))
+            });
             
-            let circle = new CircleFigure (rectsArray[index].getPosX(), rectsArray[index].getPosY()+100,
-            rectsArray[index].getTam(), rectsArray[index].getDir(), rectsArray[index].getValue());
-
+            for(let index=0; index<circleArray.length; index++){
+            this.circleArray[index].setPosX(rectsArray[index].getPosX());
+            this.circleArray[index].setValue(rectsArray[index].getValue());
+            }
         
-            console.log("crear circulos");
-            rectsArray.map(function (element) 
-            {
-                
-                return new CircleFigure;
-            })
-          
-        }
-       paintCircles=true;
+     
         }
 
 }
@@ -212,5 +219,8 @@ function sizeChange() {
      }  
     
 }
+
+
+
 
 }
