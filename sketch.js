@@ -3,24 +3,18 @@ let screen;
 let posX;
 let posY;
 let tam;
+let dir;
+let value;
 let rectsArray;
-
-let numArray;
 
 function setup (){
 
     createCanvas(500, 500);
     num=0;
     screen=1;
-    rectsArray = [];
-
    
 
-    posX= 10;
-    posY= 10;
-    tam=50;
-    
-    
+   
 }
 
 
@@ -54,7 +48,6 @@ function draw(){
     fill(255);
     rect(300, 400, 100, 50);
  }
-
     }
 
     if(screen==2){
@@ -63,31 +56,42 @@ function draw(){
         fill(255);
         rect(200, 200, 100, 50);
 
-        rectsArray=[num];
-
-        for (let i = 0; i < num; i++) {
-
-            console.log(rectsArray);
-            let figure = new RectFigure ( random(10,400),random(10,250), tam);
-            rectsArray[i] = figure;   
-            //figure.draw();
-            figure.draw();   
-        }
-
-        
-
+       // console.log(num)
        
-
-       
-
+       for (let index = 0; index < rectsArray.length; index++) {
+          rectsArray[index].draw();
+          rectsArray[index].move();
+          rectsArray[index].cicle();
+           
+       }
       }
     
 }
 
+function init (){
+    for (let index = 0; index < num; index++) {
+
+        posY= random(0,250);
+        posX= random(0,500);
+        tam=50;
+        dir=2;   
+        value= random(1,10);
+        fill(255);
+        let figure = new RectFigure ( posX, posY, tam, dir, value);
+        rectsArray[index] = figure;   
+              
+    }
+
+}
+
+ function keyPressed (){
+     console.log(rectsArray);
+ }
 function mousePressed() {
 
     if(screen==1){
-        //restar boton
+        //restar
+        
         if(mouseX>150 && mouseX<180 && mouseY>210 && mouseY<240 ){
 
             num--;
@@ -96,7 +100,7 @@ function mousePressed() {
                 }
               
             }
-
+        //sumar boton
         if(mouseX>320 && mouseX<350 && mouseY>210 && mouseY<240 ){
 
             num++;
@@ -106,9 +110,12 @@ function mousePressed() {
                
             }
 
+            // cambio de pantalla boton 
             if(mouseX>300 && mouseX<400 && mouseY>400 && mouseY<450 ){
 
                screen=2;
+               rectsArray = [num];
+               init(); 
                
                    
                 }

@@ -1,18 +1,35 @@
 class RectFigure {
    
-  RectFigure (posX, posY, tam,dir) {
+  constructor (posX, posY, tam,dir, value) {
    
-    Figure.call(this, posX,posY,tam,dir);
-  }
+    this.posX=posX;
+    this.posY=posY;
+    this.tam=tam;
+    this.dir=dir;
+    this.value=value;
 
+  }
 
   draw (){
-
-    rect(posX,posY,tam);
-
+    fill(255);
+    rect(this.posX,this.posY, 50, 50);
+    fill(0);
+    text(Math.floor(this.value), this.posX+(this.tam/2),this.posY+(this.tam/2));
   }
 
+ move() {
+   
+  this.posX+=this.dir;
+}
 
+cicle(){
+  if(this.posX>500){
+    this.posX=0;
+  }
+  if(this.posX<0){
+    this.posX=500;
+  }
+}
 }
 
  
