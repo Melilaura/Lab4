@@ -50,8 +50,7 @@ function draw(){
     background(0);
     
      
-     /*image ( img , , );
-    */
+    
 
     if(screen==1){
     //textBox
@@ -95,19 +94,20 @@ function draw(){
         fill(255);
 
         //sumar al arreglo
-        image ( img5 ,10 , 420 );
-        rect(10, 420, 100, 50);
+        image ( img5 , 10 , 420 );
+       // rect(10, 420, 110, 55);
 
         //restar al arreglo
         image ( img4 , 130 , 420 );
-        rect(120, 420, 100, 50);
+        //rect(130, 420, 110, 55);
 
         //duplicar tamaño
-        image ( img6 , 230 ,420 );
-        rect(230, 420, 100, 50);
+        image ( img6 , 250 ,420 );
+      //  rect(250, 420, 110, 55);
 
         //agregar circulos
-        rect(340, 420, 100, 50);
+        image ( img8 , 370 , 420);
+      //  rect(370, 420, 110, 55);
        
        for (let index = 0; index < rectsArray.length; index++) {
           rectsArray[index].draw();
@@ -200,8 +200,8 @@ function mousePressed() {
 // SEGUNDA PANTALLLA ------------------------------------------
 if(screen==2){
     //sumar cuadros al arreglo
-
-    if(mouseX>10 && mouseX<110 && mouseY>420 && mouseY<470 ){
+ //   rect(10, 420, 110, 55);
+    if(mouseX>10 && mouseX<120 && mouseY>420 && mouseY<475 ){
 
         num+=1;
         /*for (let index = 0; index < num; index++) {
@@ -225,7 +225,8 @@ if(screen==2){
        }
    
     //eliminar
-    if(mouseX>120 && mouseX<220 && mouseY>420 && mouseY<470 ){
+     //rect(130, 420, 110, 55);
+    if(mouseX>130 && mouseX<240 && mouseY>420 && mouseY<475 ){
 
         //num=-1;
        // for (let index = 0; index < num; index++) {
@@ -244,7 +245,8 @@ if(screen==2){
         }
 
     //duplicar tamaño
-    if(mouseX>230 && mouseX<330 && mouseY>420 && mouseY<470 ){
+    //  rect(250, 420, 110, 55);
+    if(mouseX>250 && mouseX<360 && mouseY>420 && mouseY<475 ){
 
         console.log("duplicar tamaño");
 
@@ -254,7 +256,8 @@ if(screen==2){
         }
 
     //crear circulos
-    if(mouseX>340 && mouseX<440 && mouseY>420 && mouseY<470 ){
+     //  rect(370, 420, 110, 55);
+    if(mouseX>370 && mouseX<480 && mouseY>420 && mouseY<475 ){
 
         /*circleArray=rectsArray.map(function(element, index){
             return (new CircleFigure((index*10)+10,375,40,10))
