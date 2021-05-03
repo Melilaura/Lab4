@@ -8,16 +8,17 @@ let value;
 let rectsArray;
 let paintCircles;
 
-function preoload (){
-    img = loadImage ('assets/suma.png')
-    img = loadImage ('assets/resta.png')
-    img = loadImage ('assets/next.png')
-    img = loadImage ('assets/menos cuadros.png')
-    img = loadImage ('assets/mas cuadros.png')
-    img = loadImage ('assets/duplicar tamaño.png')
-    img = loadImage ('assets/contador.png')
-    img = loadImage ('assets/circulo.png')
-}
+let img1;
+let img2;
+let img3;
+let img4;
+let img5;
+let img6;
+let img7;
+let img8;
+
+
+
 
 
 function setup (){
@@ -28,39 +29,55 @@ function setup (){
     
     paintCircles=false;
 
-    image ( img , , );
-   /* image ( img , , );
-    image ( img , , );
-    image ( img , , );
-    image ( img , , );
-    image ( img , , );
-    image ( img , , );
-    image ( img , , );*/
+    img1 = loadImage ('assets/suma.png');
+    img2 = loadImage ('assets/resta.png');
+    img3 = loadImage ('assets/next.png');
+    img4 = loadImage ('assets/menos cuadros.png');
+    img5 = loadImage ('assets/mas cuadros.png');
+    img6 = loadImage ('assets/duplicar tamaño.png');
+    img7 = loadImage ('assets/contador.png');
+    img8 = loadImage ('assets/circulo.png');
+  
 
 }
 
 
 function draw(){
 
-    background(1,13,38);
+    background(0);
+    
+     
+     /*image ( img , , );
+    
+   
+     image ( img , , );
+     image ( img , , );
+     image ( img , , );*/
 
     if(screen==1){
     //textBox
      noStroke();
      fill(255);
 
-    rect(200, 200, 100, 50);
+ 
+   // rect(200, 200, 100, 50);
+    img7.resize(130,60);
+    image ( img7 ,180 ,200 );
 
     //buttons
  //resta
- rect(150, 210, 30, 30);
+ img2.resize(40,40);
+ image ( img2 ,125 , 210);
+ //rect(125, 210, 40, 40);
 
  //suma
- rect(320, 210, 30, 30);
+ img1.resize(40,40);
+ image ( img1 , 325 , 210);
+ //rect(325, 210, 40, 40);
 
  textSize(25);
- fill(0, 102, 153);
- text(num, 240, 235);
+ fill(255);
+ text(num, 238, 239);
 
 
 
@@ -68,7 +85,8 @@ function draw(){
 
     noStroke();
     fill(255);
-    rect(300, 400, 100, 50);
+    image ( img3 , 300, 400 );
+   // rect(300, 400, 140, 55);
  }
     }
 
@@ -136,8 +154,8 @@ function mousePressed() {
     //PANTALLA PRINCIPAL------------------------------------------
     if(screen==1){
         //restar
-
-        if(mouseX>150 && mouseX<180 && mouseY>210 && mouseY<240 ){
+       // rect(125, 210, 40, 40);
+        if(mouseX>125 && mouseX<165 && mouseY>210 && mouseY<250 ){
 
             num--;
                 if(num<=0 ){
@@ -146,7 +164,8 @@ function mousePressed() {
               
             }
         //sumar 
-        if(mouseX>320 && mouseX<350 && mouseY>210 && mouseY<240 ){
+        //rect(325, 210, 40, 40);
+        if(mouseX>325 && mouseX<365 && mouseY>210 && mouseY<250 ){
 
             num++;
                  if(num>10){
@@ -156,7 +175,8 @@ function mousePressed() {
             }
 
         // cambio de pantalla a la segunda
-        if(mouseX>300 && mouseX<400 && mouseY>400 && mouseY<450 ){
+        //rect(300, 400, 140, 55);
+        if(mouseX>300 && mouseX<440 && mouseY>400 && mouseY<455 ){
      
             screen=2;
             rectsArray = [num];
