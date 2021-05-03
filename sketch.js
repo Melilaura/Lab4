@@ -8,7 +8,16 @@ let value;
 let rectsArray;
 let paintCircles;
 
-
+function preoload (){
+    img = loadImage ('assets/suma.png')
+    img = loadImage ('assets/resta.png')
+    img = loadImage ('assets/next.png')
+    img = loadImage ('assets/menos cuadros.png')
+    img = loadImage ('assets/mas cuadros.png')
+    img = loadImage ('assets/duplicar tamaño.png')
+    img = loadImage ('assets/contador.png')
+    img = loadImage ('assets/circulo.png')
+}
 
 
 function setup (){
@@ -18,12 +27,22 @@ function setup (){
     screen=1; 
     
     paintCircles=false;
+
+    image ( img , , );
+   /* image ( img , , );
+    image ( img , , );
+    image ( img , , );
+    image ( img , , );
+    image ( img , , );
+    image ( img , , );
+    image ( img , , );*/
+
 }
 
 
 function draw(){
 
-    background(208,240,244);
+    background(1,13,38);
 
     if(screen==1){
     //textBox
@@ -98,7 +117,7 @@ function init (){
 
  function keyPressed (){
      
-    if(key=='n' )
+    if(key=='n' ) 
     {
         rectsArray.sort(function (a,b){
            
