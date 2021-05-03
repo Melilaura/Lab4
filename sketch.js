@@ -51,11 +51,7 @@ function draw(){
     
      
      /*image ( img , , );
-    
-   
-     image ( img , , );
-     image ( img , , );
-     image ( img , , );*/
+    */
 
     if(screen==1){
     //textBox
@@ -99,12 +95,15 @@ function draw(){
         fill(255);
 
         //sumar al arreglo
+        image ( img5 ,10 , 420 );
         rect(10, 420, 100, 50);
 
         //restar al arreglo
+        image ( img4 , 130 , 420 );
         rect(120, 420, 100, 50);
 
         //duplicar tamaño
+        image ( img6 , 230 ,420 );
         rect(230, 420, 100, 50);
 
         //agregar circulos
@@ -117,12 +116,12 @@ function draw(){
            
        }
 
-       for (let index = 0; index < circleArray.length; index++) {
+    /*  for (let index = 0; index < circleArray.length; index++) {
            circleArray[index].draw();
            circleArray[index].move();
            circleArray[index].cicle();
            
-       }
+       }*/
       }
     
 }
@@ -204,8 +203,8 @@ if(screen==2){
 
     if(mouseX>10 && mouseX<110 && mouseY>420 && mouseY<470 ){
 
-        num=+1;
-        for (let index = 0; index < num; index++) {
+        num+=1;
+        /*for (let index = 0; index < num; index++) {
             
             posY= random(0,250);
             posX= random(0,500);
@@ -213,9 +212,14 @@ if(screen==2){
             let figure = new RectFigure ( posX, posY, tam, dir, value);                      
             let nuevaLongitud = rectsArray.push(figure); 
        
-        }
+        }*/
+        rectsArray.push (new RectFigure ( random(0,500),  random(0,250), 50, 2, random(1,10)));  
 
-        
+        if(num > 10){
+            rectsArray.pop();
+            num=10;
+        }
+        console.log(num);
         console.log("Sumar al arreglo");
         
        }
@@ -228,6 +232,10 @@ if(screen==2){
 
            // let ultimo = rectsArray[rectsArray.length - 1]
            /*ultimo = */rectsArray.pop()
+           if(num < 1){
+            rectsArray.push (new RectFigure ( random(0,500),  random(0,250), 50, 2, random(1,10)));  
+            num=1;
+        }
             
        
         //}
