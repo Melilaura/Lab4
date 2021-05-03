@@ -5,8 +5,11 @@ let posY;
 let tam;
 let dir;
 let value;
+
 let rectsArray;
+let circleArray;
 let paintCircles;
+let circles;
 
 let img1;
 let img2;
@@ -113,6 +116,13 @@ function draw(){
           rectsArray[index].cicle();
            
        }
+
+       for (let index = 0; index < circleArray.length; index++) {
+           circleArray[index].draw();
+           circleArray[index].move();
+           circleArray[index].cicle();
+           
+       }
       }
     
 }
@@ -134,7 +144,7 @@ function init (){
 }
 
  function keyPressed (){
-     
+     //console.log(rectsArray);
     if(key=='n' ) 
     {
         rectsArray.sort(function (a,b){
@@ -238,15 +248,29 @@ if(screen==2){
     //crear circulos
     if(mouseX>340 && mouseX<440 && mouseY>420 && mouseY<470 ){
 
-        circleArray=rectsArray.map(function(element, index){
+        /*circleArray=rectsArray.map(function(element, index){
             return (new CircleFigure((index*10)+10,375,40,10))
-            });
+            });*/
+            circleArray=[num];
             
-            for(let index=0; index<circleArray.length; index++){
-            this.circleArray[index].setPosX(rectsArray[index].getPosX());
+            for(let index=0; index<num; index++){
+
+                circles = new CircleFigure(rectsArray[index].getPosX(),rectsArray[index].getPosY()+200,
+                rectsArray[index].getTam(), rectsArray[index].getDir(), rectsArray[index].getValue());
+
+
+                circleArray[index]=circles;
+                
+
+                //console.log(rectsArray[index].getPosX());
+
+           /* this.circleArray[index].setPosX(rectsArray[index].getPosX());
             this.circleArray[index].setValue(rectsArray[index].getValue());
+
+*/
             }
         
+
      
         }
 
